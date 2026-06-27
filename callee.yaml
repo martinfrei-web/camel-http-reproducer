@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/apache/camel/refs/tags/camel-4.20.0/dsl/camel-yaml-dsl/camel-yaml-dsl/src/generated/resources/schema/camelYamlDsl.json
+
+- route:
+    from:
+      uri: platform-http:/callee
+      steps:
+        - log: callee is called with the headers '${headers}' and the body '${body}'

@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/apache/camel/refs/tags/camel-4.20.0/dsl/camel-yaml-dsl/camel-yaml-dsl/src/generated/resources/schema/camelYamlDsl.json
+
+- route:
+    from:
+      uri: timer:yaml
+      parameters:
+        period: 1000
+        repeatCount: 1
+      steps:
+        - setHeader:
+            name: foo
+            constant: bar
+        - setBody:
+            simple: Hello Camel from ${routeId}
+        - to:
+           uri: http:localhost:8080/callee
+        - log: got back the response with the headers '${headers}' and the body '${body}'
