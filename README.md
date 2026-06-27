@@ -25,3 +25,5 @@ Caller console output:
 ```
 2026-06-27 10:07:01.003  INFO 13968 --- [ - timer://yaml] caller.yaml:17                           : got back the response with the headers '{CamelHttpResponseCode=200, CamelHttpResponseText=OK, foo=bar}' and the body 'Hello Camel from route1'
 ```
+
+To my understanding we should not see any `CamelXXX` headers by the caller's or callee's logs above, but that's apparently not the case.
